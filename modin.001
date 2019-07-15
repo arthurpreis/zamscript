@@ -1,0 +1,37 @@
+This file shows what your screen would look like if you invoked ZAMS
+and gave it some input for a 1 solar mass model with uniform
+composition X=0.74 and Y=0.24. Input is in lower case as answers to
+questions that ZAMS asks. Remarks made between /* and */ are comments
+by us to guide you.
+
+_______________________________________________________________
+
+THE TOTAL MASS IS (IN MSUN)
+1.        /* Enter mass in solar units. */
+X(Hydrogen) AND Y(HELIUM) ARE
+.74 .24   /* Enter Hydrogen and helium mass fractions for model. */
+GUESS FOR CENTRAL PRESSURE (IN CGS)
+1.483e17  /* Enter guess for central pressure in cgs units. */
+GUESS FOR CENTRAL TEMPERATURE (IN K)
+1.449e7   /* Enter guess for central temperature in Kelvin. */
+GUESS FOR TOTAL RADIUS (IN CM)
+6.93e10   /* Enter guess for stellar radius in cm. */
+GUESS FOR TOTAL LUMINOSITY (IN LSUN)
+.9       /* Enter guess for surface luminosity in units of solar
+			luminosity. */
+WHAT IS YOUR OUTPUT FILENAME?
+modout.001  /* Enter the name of the file you want output to be
+		directed to. This file is also on this diskette
+		as output to the above input and guesses and
+		contains the final model quantities. */
+DO YOU WANT PULSATION OUTPUT? (Y/N)
+y  /* If you answer y or Y to this question then additional
+	output will be written to the file given below. That
+	output is used in PULS.FOR. If the answer is n or N
+	then no additional output will be written. */
+PULSATION FILENAME IS
+puls.001   /* If ZAMS runs correctly then a large amount of numbers
+	       will be written to this file; e.g., Brunt-Vaisala
+	       frequencies, etc. This file is included on this
+               diskette. */
+/* Now hope everything works. CJH & SDK. */

@@ -56,3 +56,14 @@ docs/_build/
 
 # PyBuilder
 target/
+
+#Data
+*.dat
+
+#fortran compiler outpit
+*.o
+
+*.idea/*
+
+
+\.9
