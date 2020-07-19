@@ -1,6 +1,9 @@
 c ***********************************************
                       PROGRAM ZAMS
 c ***********************************************
+c Arthur Reis - 2020
+c Modified to be automated by the pyhon script
+c **********************************************
 c This program constructs homogeneous zero age main sequence
 c models using the ``fitting'' technique outlined in
 c Chapter 7.
@@ -65,7 +68,7 @@ c Check to see if converged.
 c The calculation converged so give it one more shot.
          CALL GOOUT (NFOUT, 2)
          CALL GOIN (N, NFIN, 2)
-         WRITE (6,1001) OUTFILE
+c         WRITE (6,1001) OUTFILE
  1001    FORMAT (' MODEL OUTPUT WRITTEN TO FILE  ',A20)
          IF (IPULS) WRITE (6,1002) OUTPULS
  1002    FORMAT (' PULSATION OUTPUT WRITTEN TO ',A20)
@@ -111,8 +114,11 @@ C      WRITE (6,1004)
 
 c Read from file
 c PARM.txt, separate by commas!
+c      WRITE(*,*) 'ENTROU NO INPUT'
       OPEN (unit = 1, FILE='PARM.txt')
+c      WRITE(*,*) 'ABRIU O PARM'
       READ (1,*) AMASS, X, Y, PC, TC, R, AL, OUTFILE, YORN
+c      WRITE(*,*) 'LEU O PARM'
 c      WRITE (*,*) AMASS, X, Y, PC, TC, R, AL, OUTFILE, YORN
 
 ccc 1004 FORMAT (' THE TOTAL MASS IS (IN MSUN) ')
@@ -136,7 +142,7 @@ ccc      READ (5,*) AL
 c Determine QFIT and set NTRY.
 
 ccc Number of iterations to corverge before give up
-      NTRY=20
+      NTRY=200
       TEMP1=DLOG10(1.5D0)
       TEMP2=0.6D0/(1.0D0-TEMP1)
       IF (AMASS .GE. 10.0D0) THEN
